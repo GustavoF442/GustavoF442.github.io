@@ -254,55 +254,48 @@
       <p class="sec-note">Projetos de trabalho, da faculdade e pessoais. Os que têm link de deploy estavam no ar na última verificação, em outubro de 2026.</p>
     </header>
 
-    <article class="tool-feature reveal">
-      <div class="tool-text">
-        <p class="case-top mono"><span>Uso interno · SJSYS</span><span class="state state-dev">Em desenvolvimento</span></p>
-        <h3>SJ Remote</h3>
-        <p class="tool-lede">Suporte remoto para Windows feito para a equipe da SJSYS. O técnico só vê e controla o computador depois que a pessoa clica em <em>Aceitar</em>. Uma barra vermelha fica visível durante toda a sessão, com um botão para encerrar.</p>
-        <ul class="tool-points">
-          <li><b>Sem porta aberta no cliente.</b> Os computadores só fazem conexões de saída para o servidor da empresa.</li>
-          <li><b>Sessão cifrada de ponta a ponta.</b> TLS mútuo dentro do relay: o servidor intermedia, mas não vê a tela nem o teclado.</li>
-          <li><b>Duas edições.</b> A do cliente só recebe suporte; a da equipe tem login, lista de computadores, auditoria e verificação em duas etapas.</li>
-          <li><b>Testes.</b> Suítes de unidade, segurança, integração e servidor, e um teste ponta a ponta com os executáveis reais.</li>
-        </ul>
-        <ul class="tags mono" aria-label="Tecnologias"><li>.NET 10</li><li>WPF</li><li>ASP.NET Core</li><li>SQLite</li><li>DXGI</li></ul>
-      </div>
-      <figure class="tool-shot">
-        <img src="assets/shots/sjremote.webp" width="1400" height="869" loading="lazy" alt="Tela da edição Equipe do SJ Remote, com a lista de computadores e os dados ocultados">
-        <figcaption class="mono">Edição Equipe, versão 0.7.0. Nomes e dados dos clientes ocultados.</figcaption>
-      </figure>
-    </article>
+    <div class="tools">
+      <article class="tool reveal">
+        <figure class="tool-shot">
+          <img src="assets/shots/sjremote.webp" width="1400" height="869" loading="lazy" alt="Tela da edição Equipe do SJ Remote, com a lista de computadores e os dados ocultados">
+        </figure>
+        <div class="tool-text">
+          <p class="case-top mono"><span>Uso interno · SJSYS</span><span class="state state-dev">Em desenvolvimento</span></p>
+          <h3>SJ Remote</h3>
+          <p>Suporte remoto para Windows da equipe da SJSYS. O técnico só acessa depois que a pessoa clica em <em>Aceitar</em>, e uma barra vermelha fica visível durante toda a sessão.</p>
+          <ul class="tool-points">
+            <li>Sem porta aberta no cliente: só conexões de saída</li>
+            <li>Sessão com TLS mútuo; o servidor não vê a tela</li>
+            <li>Testes de unidade, segurança, integração e ponta a ponta</li>
+          </ul>
+          <ul class="tags mono" aria-label="Tecnologias"><li>.NET 10</li><li>WPF</li><li>ASP.NET Core</li><li>SQLite</li></ul>
+        </div>
+      </article>
 
-    <article class="tool-feature tool-feature-alt reveal">
-      <div class="tool-text">
-        <p class="case-top mono"><span>Indústria calçadista</span><a class="mono repo-inline" href="https://github.com/GustavoF442/ConversorDeImagens" target="_blank" rel="noopener">código ↗</a></p>
-        <h3>Conversor de imagens</h3>
-        <p class="tool-lede">Transforma fotos de calçados em desenho técnico em preto e branco puro, pronto para imprimir etiquetas nas impressoras térmicas Argox. Nasceu de uma necessidade da fábrica: a foto colorida não imprime bem a 203 dpi.</p>
-        <ul class="tool-points">
-          <li><b>Quatro modos de saída.</b> Contorno, contorno com preenchimento, ficha técnica e silhueta.</li>
-          <li><b>Ajustes finos.</b> Espessura da linha, sensibilidade da detecção de bordas, contraste, nitidez, remoção de fundo e solidificação de áreas escuras.</li>
-          <li><b>Pronto para a etiqueta.</b> Modo Argox só com preto e branco, tamanhos de 50×50 a 100×60 mm e limite de tamanho do arquivo.</li>
-          <li><b>Em lote.</b> Processa pastas inteiras de uma vez.</li>
-        </ul>
-        <ul class="tags mono" aria-label="Tecnologias"><li>TypeScript</li><li>Canvas</li><li>Web Workers</li><li>SVG</li><li>PDF</li></ul>
-      </div>
-      <figure class="tool-shot">
-        <img src="assets/shots/conversor.webp" width="1400" height="897" loading="lazy" alt="Conversor de imagens mostrando a foto de uma sandália e o desenho de contorno gerado">
-        <figcaption class="mono">Foto original à esquerda, contorno gerado à direita.</figcaption>
-      </figure>
-    </article>
+      <article class="tool reveal">
+        <figure class="tool-shot">
+          <img src="assets/shots/conversor.webp" width="1400" height="897" loading="lazy" alt="Conversor de imagens mostrando a foto de uma sandália e o desenho de contorno gerado">
+        </figure>
+        <div class="tool-text">
+          <p class="case-top mono"><span>Indústria calçadista</span><a class="mono repo-inline" href="https://github.com/GustavoF442/ConversorDeImagens" target="_blank" rel="noopener">código ↗</a></p>
+          <h3>Conversor de imagens</h3>
+          <p>Transforma fotos de calçados em desenho técnico em preto e branco puro, para imprimir etiquetas nas impressoras térmicas Argox.</p>
+          <ul class="tool-points">
+            <li>Contorno, preenchimento, ficha técnica e silhueta</li>
+            <li>Modo Argox e tamanhos de 50×50 a 100×60 mm</li>
+            <li>Processa pastas inteiras em lote</li>
+          </ul>
+          <ul class="tags mono" aria-label="Tecnologias"><li>TypeScript</li><li>Canvas</li><li>Web Workers</li></ul>
+        </div>
+      </article>
+    </div>
 
     <div class="repos">
-      <article class="repo repo-wide reveal">
+      <article class="repo reveal">
         <header class="repo-head mono"><span class="path">GustavoF442/<b>LacosWebManagement</b></span><span class="lang"><i style="--c:#3178c6"></i>TypeScript</span></header>
         <div class="repo-body">
-          <h3>Laço's · Painel administrativo</h3>
-          <p>Painel web do app <em>Laço's — Minha Saúde Feminina</em>: conteúdos educativos, textos do site, lista de usuárias e relatórios com dados anonimizados. O acesso de administrador é verificado em três camadas independentes:</p>
-          <ol class="sec-layers mono">
-            <li><span>1</span>Middleware valida o JWT do Supabase Auth em toda rota <code>/admin</code></li>
-            <li><span>2</span>O layout confere <code>is_admin</code> no servidor antes de renderizar</li>
-            <li><span>3</span>Row Level Security no Postgres bloqueia o acesso mesmo se as outras falharem</li>
-          </ol>
+          <h3>Laço's · Painel admin</h3>
+          <p>Painel do app <em>Laço's</em> de saúde feminina. Acesso de administrador verificado em três camadas: middleware, servidor e RLS no Postgres.</p>
           <ul class="tags mono" aria-label="Tecnologias"><li>Next.js 14</li><li>Supabase</li><li>Tailwind</li><li>shadcn/ui</li><li>Recharts</li></ul>
         </div>
         <footer class="repo-links mono">
@@ -315,7 +308,7 @@
         <header class="repo-head mono"><span class="path">GustavoF442/<b>PP1-SBaron</b></span><span class="lang"><i style="--c:#b07219"></i>Java</span></header>
         <div class="repo-body">
           <h3>Banco Fácil · DevSecOps</h3>
-          <p>API Java com pipeline no GitHub Actions: build, análise de segurança e imagem Docker publicada no GHCR. Trabalho de Segurança da Informação, em dupla com Carlos A. Gatis.</p>
+          <p>API Java com pipeline no GitHub Actions: build, análise de segurança e imagem no GHCR. Em dupla com Carlos A. Gatis.</p>
           <ul class="tags mono" aria-label="Tecnologias"><li>Docker</li><li>GitHub Actions</li><li>GHCR</li></ul>
         </div>
         <footer class="repo-links mono"><a href="https://github.com/GustavoF442/PP1-SBaron" target="_blank" rel="noopener">código ↗</a></footer>
@@ -325,7 +318,7 @@
         <header class="repo-head mono"><span class="path">GustavoF442/<b>AcapraDEV</b></span><span class="lang"><i style="--c:#f1e05a"></i>JavaScript</span></header>
         <div class="repo-body">
           <h3>ACAPRA · adoção de animais</h3>
-          <p>Sistema para uma ONG de proteção animal: catálogo com filtros, formulário de adoção, doações, notícias e painel administrativo. Projeto de curricularização, 2025.</p>
+          <p>Sistema de adoção para uma ONG de proteção animal, com painel administrativo. Curricularização 2025.</p>
           <ul class="tags mono" aria-label="Tecnologias"><li>Node</li><li>Render</li></ul>
         </div>
         <footer class="repo-links mono">
@@ -337,7 +330,7 @@
         <header class="repo-head mono"><span class="path">GustavoF442/<b>ClashManager</b></span><span class="lang"><i style="--c:#3572a5"></i>Python</span></header>
         <div class="repo-body">
           <h3>Clash Manager</h3>
-          <p>Painel de gestão de um clã de Clash of Clans com dados da API oficial da Supercell: membros, guerras e ataques.</p>
+          <p>Painel de um clã de Clash of Clans com dados da API oficial da Supercell.</p>
           <ul class="tags mono" aria-label="Tecnologias"><li>FastAPI</li><li>React</li><li>REST</li></ul>
         </div>
         <footer class="repo-links mono">

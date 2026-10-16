@@ -50,6 +50,22 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
 document.querySelectorAll(".reveal, .signature").forEach((el) => io.observe(el));
 
+// empilhamento dos casos: um caso mais alto que a tela só gruda quando a base dele chega ao fim da tela,
+// assim dá para ler tudo antes do próximo cobrir (vale no celular também)
+const cases = [...document.querySelectorAll(".case")];
+const topbar = document.querySelector(".topbar");
+const placeCases = () => {
+  const head = topbar.offsetHeight + 20;
+  cases.forEach((c, i) => {
+    const fits = head + i * 14;
+    const bottomAligned = window.innerHeight - c.offsetHeight - 12;
+    c.style.setProperty("--stick", `${Math.min(fits, bottomAligned)}px`);
+  });
+};
+const ro = new ResizeObserver(placeCases);
+cases.forEach((c) => ro.observe(c));
+window.addEventListener("resize", placeCases);
+
 // copiar e-mail
 const copy = document.getElementById("copy");
 copy.addEventListener("click", async () => {
