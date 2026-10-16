@@ -40,6 +40,16 @@ document.addEventListener("keydown", (e) => {
   }
 })();
 
+// blocos entram ao rolar a página; a assinatura é "escrita" da esquerda para a direita
+const io = new IntersectionObserver((entries) => {
+  for (const e of entries) {
+    if (!e.isIntersecting) continue;
+    e.target.classList.add("in");
+    io.unobserve(e.target);
+  }
+}, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+document.querySelectorAll(".reveal, .signature").forEach((el) => io.observe(el));
+
 // copiar e-mail
 const copy = document.getElementById("copy");
 copy.addEventListener("click", async () => {

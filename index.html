@@ -20,11 +20,13 @@
   <meta property="og:image:alt" content="Gustavo Henrique Fraga, analista de suporte de sistemas">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b0d0c'/%3E%3Crect x='1' y='1' width='30' height='30' rx='5' fill='none' stroke='%23ff6a2b' stroke-width='2'/%3E%3Ctext x='16' y='21' font-family='monospace' font-size='13' font-weight='700' fill='%23e8ece9' text-anchor='middle'%3EGF%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js")</script>
 
   <script type="application/ld+json">
   {
@@ -48,7 +50,7 @@
 
 <header class="topbar">
   <a href="#topo" class="brand" aria-label="Gustavo Fraga, início">
-    <span class="brand-mark" aria-hidden="true">GF</span>
+    <img class="brand-logo" src="assets/logo-gf.webp" width="160" height="109" alt="">
     <span class="brand-name">Gustavo Fraga</span>
   </a>
   <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
@@ -110,7 +112,7 @@
 
   <!-- ================= PROJETOS PARA CLIENTES ================= -->
   <section class="section wrap" id="projetos">
-    <header class="sec-head">
+    <header class="sec-head reveal">
       <p class="sec-tag mono"><span class="accent">01</span> / projetos para clientes</p>
       <h2>Projetos para clientes</h2>
       <p class="sec-note">Trabalhos feitos sob encomenda, do levantamento com o cliente à publicação. Três estão no ar; um está em desenvolvimento.</p>
@@ -118,7 +120,7 @@
 
     <div class="cases">
 
-      <article class="case">
+      <article class="case reveal" style="--i:0">
         <figure class="case-shot">
           <div class="browser">
             <div class="browser-bar mono">libertyimoveissc.com.br</div>
@@ -150,7 +152,7 @@
         </div>
       </article>
 
-      <article class="case">
+      <article class="case reveal" style="--i:1">
         <figure class="case-shot">
           <div class="browser">
             <div class="browser-bar mono">nutrienricobecker.com.br</div>
@@ -179,7 +181,7 @@
         </div>
       </article>
 
-      <article class="case">
+      <article class="case reveal" style="--i:2">
         <figure class="case-shot">
           <div class="browser">
             <div class="browser-bar mono">ateliesolangevargas.com.br</div>
@@ -210,7 +212,7 @@
         </div>
       </article>
 
-      <article class="case case-dev">
+      <article class="case case-dev reveal" style="--i:3">
         <figure class="case-shot">
           <div class="browser">
             <div class="browser-bar mono">ambiente de desenvolvimento</div>
@@ -246,29 +248,52 @@
 
   <!-- ================= SISTEMAS E FERRAMENTAS ================= -->
   <section class="section wrap" id="ferramentas">
-    <header class="sec-head">
+    <header class="sec-head reveal">
       <p class="sec-tag mono"><span class="accent">02</span> / sistemas e ferramentas</p>
       <h2>Sistemas e ferramentas</h2>
       <p class="sec-note">Projetos de trabalho, da faculdade e pessoais. Os que têm link de deploy estavam no ar na última verificação, em outubro de 2026.</p>
     </header>
 
-    <article class="tool-feature">
-      <div class="tool-head">
+    <article class="tool-feature reveal">
+      <div class="tool-text">
         <p class="case-top mono"><span>Uso interno · SJSYS</span><span class="state state-dev">Em desenvolvimento</span></p>
         <h3>SJ Remote</h3>
         <p class="tool-lede">Suporte remoto para Windows feito para a equipe da SJSYS. O técnico só vê e controla o computador depois que a pessoa clica em <em>Aceitar</em>. Uma barra vermelha fica visível durante toda a sessão, com um botão para encerrar.</p>
+        <ul class="tool-points">
+          <li><b>Sem porta aberta no cliente.</b> Os computadores só fazem conexões de saída para o servidor da empresa.</li>
+          <li><b>Sessão cifrada de ponta a ponta.</b> TLS mútuo dentro do relay: o servidor intermedia, mas não vê a tela nem o teclado.</li>
+          <li><b>Duas edições.</b> A do cliente só recebe suporte; a da equipe tem login, lista de computadores, auditoria e verificação em duas etapas.</li>
+          <li><b>Testes.</b> Suítes de unidade, segurança, integração e servidor, e um teste ponta a ponta com os executáveis reais.</li>
+        </ul>
         <ul class="tags mono" aria-label="Tecnologias"><li>.NET 10</li><li>WPF</li><li>ASP.NET Core</li><li>SQLite</li><li>DXGI</li></ul>
       </div>
-      <ul class="tool-points">
-        <li><b>Sem porta aberta no cliente.</b> Os computadores só fazem conexões de saída para o servidor da empresa.</li>
-        <li><b>Sessão cifrada de ponta a ponta.</b> TLS mútuo dentro do relay: o servidor intermedia, mas não vê a tela nem o teclado.</li>
-        <li><b>Duas edições.</b> A do cliente só recebe suporte; a da equipe tem login, lista de computadores, auditoria e verificação em duas etapas.</li>
-        <li><b>Testes.</b> Suítes de unidade, segurança, integração e servidor, e um teste ponta a ponta com os executáveis reais.</li>
-      </ul>
+      <figure class="tool-shot">
+        <img src="assets/shots/sjremote.webp" width="1400" height="869" loading="lazy" alt="Tela da edição Equipe do SJ Remote, com a lista de computadores e os dados ocultados">
+        <figcaption class="mono">Edição Equipe, versão 0.7.0. Nomes e dados dos clientes ocultados.</figcaption>
+      </figure>
+    </article>
+
+    <article class="tool-feature tool-feature-alt reveal">
+      <div class="tool-text">
+        <p class="case-top mono"><span>Indústria calçadista</span><a class="mono repo-inline" href="https://github.com/GustavoF442/ConversorDeImagens" target="_blank" rel="noopener">código ↗</a></p>
+        <h3>Conversor de imagens</h3>
+        <p class="tool-lede">Transforma fotos de calçados em desenho técnico em preto e branco puro, pronto para imprimir etiquetas nas impressoras térmicas Argox. Nasceu de uma necessidade da fábrica: a foto colorida não imprime bem a 203 dpi.</p>
+        <ul class="tool-points">
+          <li><b>Quatro modos de saída.</b> Contorno, contorno com preenchimento, ficha técnica e silhueta.</li>
+          <li><b>Ajustes finos.</b> Espessura da linha, sensibilidade da detecção de bordas, contraste, nitidez, remoção de fundo e solidificação de áreas escuras.</li>
+          <li><b>Pronto para a etiqueta.</b> Modo Argox só com preto e branco, tamanhos de 50×50 a 100×60 mm e limite de tamanho do arquivo.</li>
+          <li><b>Em lote.</b> Processa pastas inteiras de uma vez.</li>
+        </ul>
+        <ul class="tags mono" aria-label="Tecnologias"><li>TypeScript</li><li>Canvas</li><li>Web Workers</li><li>SVG</li><li>PDF</li></ul>
+      </div>
+      <figure class="tool-shot">
+        <img src="assets/shots/conversor.webp" width="1400" height="897" loading="lazy" alt="Conversor de imagens mostrando a foto de uma sandália e o desenho de contorno gerado">
+        <figcaption class="mono">Foto original à esquerda, contorno gerado à direita.</figcaption>
+      </figure>
     </article>
 
     <div class="repos">
-      <article class="repo repo-wide">
+      <article class="repo repo-wide reveal">
         <header class="repo-head mono"><span class="path">GustavoF442/<b>LacosWebManagement</b></span><span class="lang"><i style="--c:#3178c6"></i>TypeScript</span></header>
         <div class="repo-body">
           <h3>Laço's · Painel administrativo</h3>
@@ -286,17 +311,7 @@
         </footer>
       </article>
 
-      <article class="repo">
-        <header class="repo-head mono"><span class="path">GustavoF442/<b>ConversorDeImagens</b></span><span class="lang"><i style="--c:#3178c6"></i>TS</span></header>
-        <div class="repo-body">
-          <h3>Conversor de imagens para impressão térmica</h3>
-          <p>Converte fotos de calçados em desenho técnico em preto e branco puro, para imprimir etiquetas nas impressoras térmicas Argox. Processa pastas inteiras em lote.</p>
-          <ul class="tags mono" aria-label="Tecnologias"><li>Canvas</li><li>Web Workers</li><li>SVG</li><li>PDF</li></ul>
-        </div>
-        <footer class="repo-links mono"><a href="https://github.com/GustavoF442/ConversorDeImagens" target="_blank" rel="noopener">código ↗</a></footer>
-      </article>
-
-      <article class="repo">
+      <article class="repo reveal">
         <header class="repo-head mono"><span class="path">GustavoF442/<b>PP1-SBaron</b></span><span class="lang"><i style="--c:#b07219"></i>Java</span></header>
         <div class="repo-body">
           <h3>Banco Fácil · DevSecOps</h3>
@@ -306,7 +321,7 @@
         <footer class="repo-links mono"><a href="https://github.com/GustavoF442/PP1-SBaron" target="_blank" rel="noopener">código ↗</a></footer>
       </article>
 
-      <article class="repo">
+      <article class="repo reveal">
         <header class="repo-head mono"><span class="path">GustavoF442/<b>AcapraDEV</b></span><span class="lang"><i style="--c:#f1e05a"></i>JavaScript</span></header>
         <div class="repo-body">
           <h3>ACAPRA · adoção de animais</h3>
@@ -318,7 +333,7 @@
         </footer>
       </article>
 
-      <article class="repo">
+      <article class="repo reveal">
         <header class="repo-head mono"><span class="path">GustavoF442/<b>ClashManager</b></span><span class="lang"><i style="--c:#3572a5"></i>Python</span></header>
         <div class="repo-body">
           <h3>Clash Manager</h3>
@@ -330,7 +345,7 @@
         </footer>
       </article>
 
-      <article class="repo">
+      <article class="repo reveal">
         <header class="repo-head mono"><span class="path">GustavoF442/<b>Controle-de-Quadra</b></span><span class="lang"><i style="--c:#3572a5"></i>Python</span></header>
         <div class="repo-body">
           <h3>Controle de quadra · Beach Tennis</h3>
@@ -340,7 +355,7 @@
         <footer class="repo-links mono"><a href="https://github.com/GustavoF442/Projeto-Controle-de-Quadra---BeachTenis" target="_blank" rel="noopener">código ↗</a></footer>
       </article>
 
-      <article class="repo">
+      <article class="repo reveal">
         <header class="repo-head mono"><span class="path">GustavoF442/<b>Carteirinhas</b></span><span class="lang"><i style="--c:#3178c6"></i>TypeScript</span></header>
         <div class="repo-body">
           <h3>Carteirinhas</h3>
@@ -352,7 +367,7 @@
         </footer>
       </article>
 
-      <article class="repo">
+      <article class="repo reveal">
         <header class="repo-head mono"><span class="path">GustavoF442/<b>Registro</b></span><span class="lang"><i style="--c:#f1e05a"></i>JavaScript</span></header>
         <div class="repo-body">
           <h3>Registro</h3>
@@ -385,80 +400,73 @@
 
   <!-- ================= EXPERIÊNCIA ================= -->
   <section class="section wrap" id="experiencia">
-    <header class="sec-head">
+    <header class="sec-head reveal">
       <p class="sec-tag mono"><span class="accent">03</span> / experiência</p>
       <h2>Experiência</h2>
       <p class="sec-note">Comecei como menor aprendiz na indústria, passei quatro anos no administrativo de uma fábrica de calçados e hoje trabalho com suporte de sistemas.</p>
     </header>
 
-    <ol class="jobs">
-      <li class="job current">
-        <div class="plate"><img src="assets/logos/sjsys.webp" alt="SJSYS Software" width="240" height="65"></div>
-        <div class="job-body">
+    <article class="job-now reveal">
+      <div class="job-now-head">
+        <span class="job-logo"><img src="assets/logos/sjsys.webp" width="240" height="65" alt="SJSYS Software"></span>
+        <div>
           <p class="job-when mono">atual</p>
           <h3>Analista de Suporte de Sistemas</h3>
           <p class="job-org mono">Tutor Software · SJSYS</p>
-          <ul>
-            <li>Suporte técnico presencial e remoto a usuários dos sistemas de gestão</li>
-            <li>Diagnóstico de problemas e registro de atendimentos em chamados</li>
-            <li>Configuração, manutenção e atualização de estações de trabalho</li>
-            <li>Explicar questões técnicas para quem não é da área</li>
-          </ul>
         </div>
-      </li>
-      <li class="job">
-        <div class="plate plate-text"><span>Pamela</span><small>calçados</small></div>
-        <div class="job-body">
-          <p class="job-when mono">2021 — 2025</p>
-          <h3>Auxiliar Administrativo</h3>
-          <p class="job-org mono">Pamela Calçados</p>
-          <ul>
-            <li>Pedidos de compra e venda</li>
-            <li>Atendimento ao cliente</li>
-            <li>Controle de contas a receber</li>
-          </ul>
-        </div>
-      </li>
-      <li class="job">
-        <div class="plate"><img src="assets/logos/meninario.webp" alt="Menina Rio" width="180" height="50"></div>
-        <div class="job-body">
-          <p class="job-when mono">2020</p>
-          <h3>Menor Aprendiz</h3>
-          <p class="job-org mono">Angeli Calçados · Menina Rio</p>
-          <ul><li>Almoxarifado e expedição</li></ul>
-        </div>
-      </li>
-      <li class="job">
-        <div class="plate plate-dark"><img src="assets/logos/cartonagem.png" alt="Cartonagem Batistense" width="180" height="41"></div>
-        <div class="job-body">
-          <p class="job-when mono">2019</p>
-          <h3>Menor Aprendiz</h3>
-          <p class="job-org mono">Cartonagem Batistense</p>
-          <ul><li>Primeiro emprego, na indústria de embalagens</li></ul>
-        </div>
-      </li>
+      </div>
+      <ul class="job-tasks">
+        <li>Suporte técnico presencial e remoto a usuários dos sistemas de gestão</li>
+        <li>Diagnóstico de problemas e registro de atendimentos em chamados</li>
+        <li>Configuração, manutenção e atualização de estações de trabalho</li>
+        <li>Explicar questões técnicas para quem não é da área</li>
+        <li>Desenvolvimento do SJ Remote, ferramenta interna de suporte remoto</li>
+      </ul>
+    </article>
+
+    <ol class="jobs-before reveal" aria-label="Experiências anteriores">
+      <li><span class="mono">2021 — 2025</span><b>Auxiliar Administrativo</b><span>Pamela Calçados · pedidos de compra e venda, atendimento, contas a receber</span></li>
+      <li><span class="mono">2020</span><b>Menor Aprendiz</b><span>Angeli Calçados (Menina Rio) · almoxarifado e expedição</span></li>
+      <li><span class="mono">2019</span><b>Menor Aprendiz</b><span>Cartonagem Batistense · primeiro emprego</span></li>
     </ol>
   </section>
 
   <!-- ================= FORMAÇÃO E CERTIFICAÇÕES ================= -->
   <section class="section wrap" id="formacao">
-    <header class="sec-head">
+    <header class="sec-head reveal">
       <p class="sec-tag mono"><span class="accent">04</span> / formação</p>
       <h2>Formação e certificações</h2>
     </header>
 
     <div class="edu-grid">
       <div class="edu-side">
-        <article class="degree">
+        <article class="degree reveal">
           <p class="mono degree-tag">graduação · em andamento</p>
           <h3>Bacharelado em Sistemas de Informação</h3>
           <p class="mono">UNIFEBE · Brusque, SC</p>
         </article>
 
-        <article class="certs" aria-labelledby="certs-title">
+        <article class="certs reveal" aria-labelledby="certs-title">
           <h3 id="certs-title">Certificações</h3>
           <p class="certs-group mono">Concluídas</p>
-          <p class="certs-empty">Nenhuma certificação técnica concluída até o momento.</p>
+          <ul class="badges">
+            <li>
+              <img src="assets/badges/aws.webp" width="266" height="280" loading="lazy" alt="Badge AWS Academy Graduate, Cloud Foundations">
+              <div>
+                <b>AWS Academy Graduate · Cloud Foundations</b>
+                <span>Amazon Web Services · out. 2026</span>
+                <a class="mono" href="https://www.credly.com/badges/4bb1ccbb-d1a4-4ee2-8e8e-445d9724ce7b" target="_blank" rel="noopener">ver credencial ↗</a>
+              </div>
+            </li>
+            <li>
+              <img src="assets/badges/ibm.webp" width="280" height="280" loading="lazy" alt="Badge IBM Getting Started with Generative AI">
+              <div>
+                <b>Getting Started with Generative AI</b>
+                <span>IBM SkillsBuild · out. 2026</span>
+                <a class="mono" href="https://www.credly.com/badges/9039b84b-d628-40e2-8ec5-2936fda9032a" target="_blank" rel="noopener">ver credencial ↗</a>
+              </div>
+            </li>
+          </ul>
           <p class="certs-group mono">Planejadas para 2026</p>
           <ol class="cert-plan">
             <li><b>Microsoft Entra</b><span>Applied Skills · identidade e acesso</span></li>
@@ -471,7 +479,7 @@
 
       <div>
         <p class="certs-group mono courses-title">Cursos concluídos e em andamento</p>
-        <ul class="courses">
+        <ul class="courses reveal">
           <li><span class="mono">2025</span><div>Algoritmos e Lógica de Programação<small>Udemy · 60h</small></div></li>
           <li><span class="mono">2025</span><div>Inglês intermediário<small>BP English · em andamento</small></div></li>
           <li><span class="mono">2020</span><div>Innovation Camp Live<small>Junior Achievement · equipe vencedora</small></div></li>
@@ -490,12 +498,12 @@
 
   <!-- ================= CONHECIMENTOS ================= -->
   <section class="section wrap" id="conhecimentos">
-    <header class="sec-head">
+    <header class="sec-head reveal">
       <p class="sec-tag mono"><span class="accent">05</span> / conhecimentos</p>
       <h2>Conhecimentos</h2>
       <p class="sec-note">O que já usei em projetos publicados ou no trabalho.</p>
     </header>
-    <dl class="skills">
+    <dl class="skills reveal">
       <div><dt class="mono">Desenvolvimento</dt><dd>TypeScript, JavaScript, Java, Python, C#. Next.js, React, Vite, FastAPI, Flask, Tailwind.</dd></div>
       <div><dt class="mono">Banco de dados</dt><dd>PostgreSQL com Supabase (RLS, Auth, Storage, pg_cron), SQLite, MySQL.</dd></div>
       <div><dt class="mono">Infraestrutura e publicação</dt><dd>Docker, GitHub Actions, Vercel, Render, Cloudflare Pages e Workers, GitHub Pages.</dd></div>
@@ -517,6 +525,7 @@
         <a class="btn btn-ghost" href="https://www.linkedin.com/in/gv-fraga/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
         <a class="btn btn-ghost" href="https://github.com/GustavoF442" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
       </div>
+      <img class="signature" src="assets/assinatura.webp" width="1400" height="357" loading="lazy" alt="Assinatura de Gustavo Henrique Fraga">
     </div>
   </section>
 
