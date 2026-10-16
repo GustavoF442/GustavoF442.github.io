@@ -1,11 +1,17 @@
-// relógio local (São João Batista, SC)
-const clock = document.getElementById("clock");
-const fmt = new Intl.DateTimeFormat("pt-BR", { hour: "2-digit", minute: "2-digit", timeZone: "America/Sao_Paulo" });
-const tick = () => { clock.textContent = fmt.format(new Date()); };
-tick();
-setInterval(tick, 15000);
-
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// menu no celular
+const menuBtn = document.querySelector(".menu-btn");
+const menu = document.getElementById("menu");
+const setMenu = (open) => {
+  menu.classList.toggle("open", open);
+  menuBtn.setAttribute("aria-expanded", open);
+};
+menuBtn.addEventListener("click", () => setMenu(!menu.classList.contains("open")));
+menu.addEventListener("click", (e) => { if (e.target.closest("a")) setMenu(false); });
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && menu.classList.contains("open")) { setMenu(false); menuBtn.focus(); }
+});
 
 // código de barras da etiqueta, gerado a partir do usuário do GitHub
 (function barcode() {
@@ -34,53 +40,14 @@ document.getElementById("year").textContent = new Date().getFullYear();
   }
 })();
 
-// progresso do roadmap: lê o data-status de cada etapa
-(function roadmap() {
-  const stages = [...document.querySelectorAll(".stage")];
-  const done = stages.filter((s) => s.dataset.status === "done").length;
-  const doing = stages.filter((s) => s.dataset.status === "doing").length;
-  document.getElementById("pipe-progress").textContent = `${done}/${stages.length} concluídas`;
-  const fill = document.getElementById("pipe-fill");
-  const pct = ((done + doing * 0.5) / stages.length) * 100;
-  // pelo menos um traço visível pra indicar o início do pipeline
-  fill.dataset.pct = Math.max(pct, 3);
-})();
-
-// grade acesa seguindo o mouse no topo; alinhada com a grade fixa do fundo
-(function spotlight() {
-  const hero = document.getElementById("hero");
-  const spot = hero.querySelector(".spot");
-  hero.addEventListener("pointermove", (e) => {
-    const r = spot.getBoundingClientRect();
-    spot.style.setProperty("--mx", `${e.clientX - r.left}px`);
-    spot.style.setProperty("--my", `${e.clientY - r.top}px`);
-    spot.style.setProperty("--gx", `${-r.left - 1}px`);
-    spot.style.setProperty("--gy", `${-r.top - 1}px`);
-  });
-})();
-
-// entrada dos blocos ao rolar
-const io = new IntersectionObserver((entries) => {
-  for (const e of entries) {
-    if (!e.isIntersecting) continue;
-    e.target.classList.add("in");
-    if (e.target.id === "pipeline") {
-      const fill = document.getElementById("pipe-fill");
-      fill.style.width = fill.dataset.pct + "%";
-    }
-    io.unobserve(e.target);
-  }
-}, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-
 // copiar e-mail
 const copy = document.getElementById("copy");
 copy.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText("gustavohfraga1@gmail.com");
-    copy.textContent = "copiado ✓";
+    copy.textContent = "E-mail copiado";
   } catch {
-    copy.textContent = "use o link acima";
+    copy.textContent = "Não foi possível copiar";
   }
-  setTimeout(() => { copy.textContent = "copiar e-mail"; }, 2200);
+  setTimeout(() => { copy.textContent = "Copiar e-mail"; }, 2200);
 });
