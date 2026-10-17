@@ -404,7 +404,6 @@ code { font-family: var(--mono); font-size: .85em; color: var(--text); backgroun
 .badges li:hover img { transform: translateY(-3px) rotate(-2deg); }
 .badges b { display: block; font-weight: 600; font-size: .95rem; line-height: 1.3; }
 .badges span { display: block; color: var(--muted); font-size: .84rem; }
-.badges .cred-id { font-size: .7rem; margin-top: 4px; letter-spacing: .02em; }
 .badges a { display: inline-block; margin-top: 4px; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--line-2); }
 .badges a:hover { color: var(--accent); border-color: var(--accent); }
 .cert-plan { counter-reset: c; display: grid; gap: 10px; margin-top: 10px; }
